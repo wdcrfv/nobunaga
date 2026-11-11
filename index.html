@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>週年武運祈願所</title>
+<style>
+@font-face{font-family:"OmamoriSerif";font-style:normal;font-weight:400;font-display:block;src:url("./font-regular.woff2") format("woff2")}@font-face{font-family:"OmamoriSerif";font-style:normal;font-weight:700;font-display:block;src:url("./font-bold.woff2") format("woff2")}
+:root{--ink:#63321f;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"OmamoriSerif","Noto Serif TC","Noto Serif JP","Songti TC","PingFang TC","Microsoft JhengHei",serif;color:var(--ink);background:radial-gradient(ellipse at 14% 8%,#fffef2 2%,transparent 55%),radial-gradient(ellipse at 90% 70%,#f0cf91 2%,transparent 48%),linear-gradient(145deg,#fdf2d9,#fff8e9 38%,#f6e1b9);min-height:100vh;min-height:100dvh;-webkit-text-size-adjust:100%}
+.shell{width:min(580px,calc(100% - 18px));margin:18px auto 26px;padding:30px 15px 25px;border:1px solid #d3aa6f;border-radius:10px;box-shadow:0 12px 45px #7a42151a,inset 0 0 0 5px #fff5dc,inset 0 0 0 7px #d7b67e;background:linear-gradient(115deg,#fff9e8db,#fdf0d5ea);position:relative;overflow:hidden}
+.shell:before,.shell:after{content:"❧";position:absolute;font-size:110px;color:#c58b4b20;z-index:0}.shell:before{left:-5px;top:-28px;transform:rotate(28deg)}.shell:after{right:-4px;bottom:12px;transform:rotate(210deg)}
+main>*{position:relative;z-index:1}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.4em;color:#9f6c36;text-align:center;margin:0 0 8px;text-indent:.4em}
+.ornate{text-align:center;display:flex;align-items:center;justify-content:center;gap:16px}.ornate:before,.ornate:after{content:"◆ ──";font-size:12px;letter-spacing:.18em;color:#b78a4e;flex-shrink:0;white-space:nowrap}.ornate:after{content:"── ◆"}
+h1{font-size:clamp(26px,8.6vw,50px);margin:0;color:#702419;letter-spacing:.12em;font-weight:700;text-shadow:1px 2px #f9dfb1;white-space:nowrap;line-height:1.2;text-indent:.12em}
+h1 em{color:#b13e26;font-style:normal}
+.subhead{text-align:center;margin:14px 0 0;font-size:15px;line-height:1.7;letter-spacing:.05em;color:#73563c}.rule{height:1px;margin:23px auto 17px;max-width:86%;background:linear-gradient(90deg,transparent,#c9a16a,transparent)}
+.deck{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:10px 8px;margin:15px auto 20px;width:100%}
+.pick-card{padding:0;border:0;background:none;cursor:pointer;border-radius:12px;transition:transform .24s ease;position:relative;flex:1 1 0;min-width:0;max-width:100px;outline:none;-webkit-tap-highlight-color:transparent}
+.pick-card img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 4px 10px rgba(145,106,61,0.2);mix-blend-mode:multiply;filter:drop-shadow(0 4px 6px #916a3d32)}
+.pick-card:hover{transform:translateY(-8px);filter:brightness(1.03)}
+.stage{text-align:center;max-width:100%;margin:15px auto}.nb{white-space:nowrap}.intro{font-size:13px;line-height:1.8;margin:10px auto 15px;color:#8c6037;text-wrap:balance}
+.primary{font-family:inherit;font-weight:700;letter-spacing:.2em;font-size:18px;color:#fff5d7;background:linear-gradient(#a33e24,#7b2119 50%,#6b1e19);border:2px solid #b5803f;outline:1px solid #fbdf9a;outline-offset:-6px;box-shadow:0 4px 0 #5e241a,0 12px 18px #683f2b22;width:100%;padding:15px 10px;border-radius:11px;cursor:pointer;transition:transform .16s;text-indent:.2em}.primary:hover{filter:brightness(1.1)}.primary:active{transform:translateY(3px);box-shadow:0 1px 0 #5e241a}.primary:disabled{opacity:.65}
+.result{border:2px solid #ddbe8f;outline:1px solid #eed4aa;outline-offset:-7px;border-radius:9px;background:linear-gradient(105deg,#fff9eacc,#fdf1d5);margin:20px auto 6px;padding:15px 15px;text-align:center;min-height:110px;box-shadow:0 6px 16px #95673b15}
+.result .small{color:#ab783d;letter-spacing:.17em;font-size:13px}.result h2{margin:6px 0;font-size:22px;color:#7d281e}.result p{line-height:1.65;font-size:14px;margin:7px 0}
+.result-head{position:relative}
+.copy-btn{position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:inherit;font-size:11px;letter-spacing:.06em;color:#a0713a;background:#fffaf0cc;border:1px solid #d8b684;border-radius:999px;padding:3px 9px;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none;touch-action:manipulation;transition:background .18s,color .18s,border-color .18s}
+.copy-btn:hover{background:#f8e8c8;color:#7d281e}
+.copy-btn.copied{background:#f6dfb6;color:#7d281e;border-color:#c9925a}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,14px);max-width:calc(100% - 40px);background:#5a2318e8;color:#fff4d9;font-size:13px;line-height:1.55;letter-spacing:.05em;padding:9px 16px;border-radius:18px;text-align:center;opacity:0;pointer-events:none;transition:opacity .24s,transform .24s;z-index:300;box-shadow:0 8px 22px #2a110a55}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.special-name{background:linear-gradient(90deg,#a4530b,#ddab2e,#a4530b);color:transparent;background-clip:text;-webkit-background-clip:text}
+.toolbar{display:flex;justify-content:center;margin-top:14px}.secondary{background:transparent;color:#78472b;border:1px solid #ba955e;border-radius:6px;padding:9px 20px;font-family:inherit;cursor:pointer}.secondary:hover{background:#f5e0b8}
+.legal{text-align:center;color:#92775d;font-size:11px;line-height:1.7;margin:16px auto 0;padding:0 10px;text-wrap:balance}
+.modal{position:fixed;inset:0;z-index:100;background:#35180fbd;display:none;align-items:center;justify-content:center;padding:14px;overflow-y:auto;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}.modal.active{display:flex}
+.modal-panel{position:relative;background:linear-gradient(#fff7e3,#f5deb1);border:2px solid #d3a65c;box-shadow:0 20px 75px #160b0877;outline:5px solid #fff5d7;border-radius:12px;width:min(400px,100%);max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow:auto;-webkit-overflow-scrolling:touch;padding:21px 19px;text-align:center;animation:pop .35s ease both}
+.modal-panel.gold{box-shadow:0 0 45px #f0cc64a0,0 20px 75px #160b0877}
+@keyframes pop{from{transform:translateY(20px) scale(.94);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}.close{position:absolute;right:10px;top:7px;border:0;background:transparent;color:#7f4225;font-size:26px;line-height:1;cursor:pointer;padding:4px 8px}
+.modal-label{font-size:13px;letter-spacing:.15em;color:#af7d3f;font-weight:bold}.modal-panel h2{font-size:28px;margin:5px 0 4px;color:#872b1e;line-height:1.35}.modal-art{height:min(45vh,320px);max-height:min(45vh,320px);width:auto;display:block;max-width:100%;object-fit:contain;margin:2px auto;mix-blend-mode:multiply}.modal-panel .blessing{line-height:1.8;font-size:15px;margin:10px 0 14px;white-space:pre-line}
+.modal-actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;align-items:center}.modal-actions .primary{min-width:0;font-size:15px;letter-spacing:.05em;padding:11px 18px;border-radius:8px;text-indent:.05em}.modal-actions .secondary{font-size:13px;text-decoration:none;display:inline-block}
+.shuffling .pick-card:nth-child(odd){animation:shiver .15s ease-in-out 4 alternate}.shuffling .pick-card:nth-child(even){animation:shiver .15s ease-in-out 4 reverse alternate}@keyframes shiver{from{transform:translateY(-5px) rotate(-2deg)}to{transform:translateY(3px) rotate(2deg)}}
+
+/* ---------- 响应式：窄屏 ---------- */
+@media (max-width:560px){
+  .shell{width:calc(100% - 12px);margin:10px auto 18px;padding:22px 12px 20px}
+  .eyebrow{font-size:12px;letter-spacing:.28em;text-indent:.28em}
+  .ornate{gap:8px}
+  .subhead{font-size:13.5px;margin-top:10px;padding:0 4px}
+  .rule{margin:18px auto 14px}
+  .deck{gap:8px 8px;margin:12px auto 16px}
+  .pick-card{flex:0 0 calc(33.333% - 6px);max-width:104px}
+  .intro{font-size:12.5px;line-height:1.75}
+  .primary{font-size:16px;padding:14px 8px;letter-spacing:.14em;text-indent:.14em}
+  .result{padding:13px 12px;min-height:100px}
+  .result h2{font-size:20px}
+  .result p{font-size:13.5px}
+  .copy-btn{font-size:10px;padding:3px 8px}
+  .modal{padding:10px}
+  .modal-panel{padding:20px 15px;max-height:calc(100vh - 20px);max-height:calc(100dvh - 20px)}
+  .modal-panel h2{font-size:23px}
+  .modal-art{height:min(34vh,260px);max-height:min(34vh,260px)}
+  .modal-panel .blessing{font-size:14px;margin:8px 0 12px}
+}
+@media (max-width:400px){
+  .ornate:before,.ornate:after{display:none}
+  .eyebrow{letter-spacing:.2em;text-indent:.2em}
+  h1{letter-spacing:.08em;text-indent:.08em}
+}
+/* 横屏手机：压缩纵向留白，避免弹窗超出 */
+@media (max-height:520px) and (orientation:landscape){
+  .modal{padding:8px}
+  .modal-panel{padding:12px 16px;max-height:calc(100vh - 16px);max-height:calc(100dvh - 16px)}
+  .modal-label{font-size:11px}
+  .modal-panel h2{font-size:18px;margin:2px 0 2px}
+  .modal-art{height:min(32vh,120px);max-height:min(32vh,120px);margin:0 auto}
+  .modal-panel .blessing{font-size:12.5px;line-height:1.6;margin:4px 0 8px}
+  .modal-actions .primary{padding:8px 16px;font-size:14px;border-radius:7px}
+}
+@media (prefers-reduced-motion:reduce){
+  .modal-panel{animation:none}
+  .shuffling .pick-card{animation:none}
+}
+</style>
+</head>
+<body>
+<main class="shell" id="app">
+  <p class="eyebrow">一週年・專屬限定活動</p>
+  <div class="ornate"><h1>週年武運<em>祈願所</em></h1></div>
+  <p class="subhead">五枚御守寄心願，願殿下所盼皆有回應。</p>
+  <div class="rule"></div>
+  <div class="deck" id="deck"></div>
+  <section class="stage">
+    <div class="intro">點擊任意一張<span class="nb">御守</span>或按下下方<span class="nb">按鈕</span>，解鎖<span class="nb">殿下</span>的專屬週年祝福。</div>
+    <button type="button" class="primary" id="drawButton">✦ 抽取御守 ✦</button>
+  </section>
+  <section class="result" id="result" aria-live="polite">
+    <div class="result-head">
+      <div class="small" id="resultLabel">✦ 祈願結果 ✦</div>
+      <button type="button" class="copy-btn" id="copyResult" aria-label="點擊複製祈願結果">點擊複製</button>
+    </div>
+    <h2 id="resultName">尚未祈願</h2>
+    <p id="resultText">願這枚御守，伴隨殿下踏上下一段征途。</p>
+  </section>
+  <div class="toolbar"><button type="button" class="secondary" id="resetResult">重新開始</button></div>
+  <p class="legal">※ 本頁面僅供互動體驗，<span class="nb">抽取結果為週年祝福展示，</span><span class="nb">不代表正式活動中獎資格。</span></p>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal-panel" id="modalPanel">
+    <button class="close" id="closeModal" aria-label="關閉">×</button>
+    <div class="modal-label" id="modalLabel">✦ 恭喜抽中 ✦</div>
+    <h2 id="modalName">御守</h2>
+    <img class="modal-art" id="modalArt" alt="">
+    <p class="blessing" id="modalBlessing"></p>
+    <div class="modal-actions"><button type="button" class="primary" id="again">再抽一次</button></div>
+  </div>
+</div>
+
+<script>
+const cardBackSrc = "./img/back.webp";
+
+const omamori = [
+  { "name": "登用御守", "bless": "願殿下下一次登用之時，\n心中所念皆有回音。", "src": "./img/1.webp", "weight": 24.5, "special": false },
+  { "name": "鍛造御守", "bless": "願殿下巧鍛成器，\n每一次打造皆有所獲。", "src": "./img/2.webp", "weight": 24.5, "special": false },
+  { "name": "開陣御守", "bless": "願殿下新程起步順遂，\n所行之處皆得先機。", "src": "./img/3.webp", "weight": 24.5, "special": false },
+  { "name": "勝運御守", "bless": "願殿下臨陣不亂，\n關鍵之戰皆有勝機。", "src": "./img/4.webp", "weight": 24.5, "special": false },
+  { "name": "週年限定・金色真戰御守", "bless": "相傳只有心中懷有期待之人，\n看見這道金色的光。\n願殿下下一段征途，\n所求皆有所得，\n所行皆不留憾。", "src": "./img/5.webp", "weight": 2, "special": true }
+];
+
+const $ = id => document.getElementById(id);
+let locked = false;
+
+function setup() {
+  omamori.forEach((c,i)=>{
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'pick-card';
+    btn.setAttribute('aria-label','第'+(i+1)+'枚御守');
+    const img = document.createElement('img');
+    img.src = cardBackSrc; img.alt = '';
+    btn.appendChild(img);
+    btn.addEventListener('click',()=>draw());
+    $('deck').appendChild(btn);
+  });
+}
+
+function weightedChoice(){
+  const r=Math.random()*100; let cum=0;
+  for(let i=0;i<omamori.length;i++){ cum+=omamori[i].weight; if(r<cum)return i; }
+  return 0;
+}
+
+function display(i){
+  const c=omamori[i]; locked=false;
+  $('deck').classList.remove('shuffling'); $('drawButton').disabled=false;
+
+  $('resultLabel').textContent=c.special?'✦ 稀有金色御守 ✦':'✦ 祈願結果 ✦';
+  $('resultName').textContent=c.name; $('resultName').className=c.special?'special-name':'';
+  $('resultText').textContent=c.bless;
+
+  $('modalName').textContent=c.name; $('modalName').className=c.special?'special-name':'';
+  $('modalArt').src=c.src; $('modalArt').alt=c.name; $('modalBlessing').textContent=c.bless;
+  $('modalPanel').classList.toggle('gold',c.special);
+  $('modalLabel').textContent=c.special?'✦ 稀有金色御守 ✦':'✦ 恭喜抽中 ✦';
+
+  $('modal').classList.add('active'); $('closeModal').focus();
+
+  const allCards = document.querySelectorAll('.pick-card img');
+  allCards.forEach((img, idx) => { img.src = (idx === i) ? c.src : cardBackSrc; });
+}
+
+function draw(){
+  if(locked)return; locked=true; $('drawButton').disabled=true; closeResult();
+  const allCards = document.querySelectorAll('.pick-card img');
+  allCards.forEach(img => { img.src = cardBackSrc; });
+  $('deck').classList.add('shuffling');
+  setTimeout(()=>display(weightedChoice()),560);
+}
+
+function closeResult(){ $('modal').classList.remove('active'); }
+
+$('drawButton').addEventListener('click',()=>draw());
+$('resetResult').addEventListener('click',()=>{
+  closeResult(); $('resultLabel').textContent='✦ 祈願結果 ✦';
+  $('resultName').textContent='尚未祈願'; $('resultName').className='';
+  $('resultText').textContent='願這枚御守，伴隨殿下踏上下一段征途。';
+  const allCards = document.querySelectorAll('.pick-card img');
+  allCards.forEach(img => { img.src = cardBackSrc; });
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+$('again').addEventListener('click',()=>draw());
+$('closeModal').addEventListener('click',closeResult);
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeResult();});
+$('modal').addEventListener('touchmove',e=>{if(e.target===$('modal'))e.preventDefault();},{passive:false});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeResult();});
+/* ---------- 點擊複製祈願結果 ---------- */
+function toast(msg){
+  var el=document.getElementById('toast');
+  if(!el){el=document.createElement('div');el.id='toast';el.className='toast';document.body.appendChild(el);}
+  el.textContent=msg;el.classList.add('show');
+  clearTimeout(toast._t);toast._t=setTimeout(function(){el.classList.remove('show');},1800);
+}
+
+function blessingText(){
+  var name=$('resultName').textContent.replace(/\s+/g,' ').trim();
+  if(!name||name==='尚未祈願')return '';
+  return name;
+}
+
+function fallbackCopy(text){
+  var ta=document.createElement('textarea');
+  ta.value=text;ta.setAttribute('readonly','');
+  ta.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;padding:0;border:0;opacity:0;';
+  document.body.appendChild(ta);
+  ta.select();ta.setSelectionRange(0,ta.value.length);
+  var ok=false;
+  try{ok=document.execCommand('copy');}catch(e){ok=false;}
+  ta.remove();
+  return ok;
+}
+
+function doCopy(){
+  var text=blessingText();
+  if(!text){toast('尚未抽取，暫無可複製的御守名稱');return;}
+  var btn=$('copyResult');
+  var done=function(ok){
+    if(ok){
+      btn.textContent='已複製';btn.classList.add('copied');
+      clearTimeout(doCopy._t);
+      doCopy._t=setTimeout(function(){btn.textContent='點擊複製';btn.classList.remove('copied');},1600);
+      toast('已複製御守名稱');
+      if(navigator.vibrate)navigator.vibrate(18);
+    }else{
+      toast('複製失敗，請長按文字手動選取');
+    }
+  };
+  if(navigator.clipboard&&window.isSecureContext){
+    navigator.clipboard.writeText(text).then(function(){done(true);},function(){done(fallbackCopy(text));});
+  }else{
+    done(fallbackCopy(text));
+  }
+}
+
+(function(){
+  var btn=$('copyResult');
+  var timer=null,longFired=false;
+  btn.addEventListener('pointerdown',function(){
+    longFired=false;clearTimeout(timer);
+    timer=setTimeout(function(){longFired=true;doCopy();},480);
+  });
+  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){
+    btn.addEventListener(ev,function(){clearTimeout(timer);});
+  });
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    if(longFired){longFired=false;return;}
+    doCopy();
+  });
+})();
+
+setup();
+</script>
+<script>
+document.addEventListener('error',function(e){
+  var t=e.target;
+  if(t&&t.tagName==='IMG'){
+    var n=+(t.dataset.rt||0);
+    if(n<3){
+      t.dataset.rt=n+1;
+      setTimeout(function(){
+        var u=t.src.split('?')[0];
+        t.src=u+'?r='+Date.now();
+      },400*(n+1));
+    }
+  }
+},true);
+</script>
+</body>
+</html>
